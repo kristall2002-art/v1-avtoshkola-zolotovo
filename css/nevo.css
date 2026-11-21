@@ -1,0 +1,743 @@
+/* Нево-Класс: переопределения поверх эталона. Светлая дневная палитра: синий + жёлтый («учебный» знак). */
+:root{--spot:255,201,77}
+
+/* ---------- первый экран: светлое дневное фото, без видео ---------- */
+.hero-bg{background:#a9cdf0 url(../img/hero-poster.jpg) 58% 55%/cover no-repeat}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.34) 0%,rgba(255,255,255,0) 52%)}
+@media screen and (min-width:768px){.hero-plq{--plq-w:clamp(520px,calc(42*var(--vwu,1vw)),700px)}}
+@media screen and (min-width:768px){.hw{font-size:calc((var(--plq-w) - 2 * var(--plq-pad)) / 5.5);font-weight:600;letter-spacing:-.01em}}
+@media screen and (min-width:768px){.hn{font-size:clamp(20px,calc(2*var(--vwu,1vw)),28px);font-weight:500}}
+html[data-theme="light"]:not([data-hc="1"]) .sec-hero{--glass:rgba(255,255,255,.78);--glass-blur:10px}
+html[data-theme="light"]:not([data-hc="1"]) .hero-plq .kicker{color:#1f5fa8}
+html[data-theme="light"]:not([data-hc="1"]) .hero-plq .kicker::before{background:#1f5fa8}
+html[data-theme="light"]:not([data-hc="1"]) .hw{color:#102f55}
+html[data-theme="light"]:not([data-hc="1"]) .hn{color:#1f5fa8}
+html[data-theme="light"]:not([data-hc="1"]) .hero-addr .addr-link:hover{color:#1f5fa8}
+.hero-lead{margin-top:14px}
+.hero-cats{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 0;padding:0;list-style:none}
+.hero-cats li{display:inline-flex;align-items:center;gap:7px;padding:7px 14px 7px 11px;border-radius:999px;background:rgba(255,255,255,.85);border:1px solid rgba(31,95,168,.28);font-weight:600;font-size:14.5px;color:#12365f;text-shadow:none}
+.hero-cats .ico{width:16px;height:16px;color:#1f5fa8}
+.hero-cta{margin-top:18px}
+@media screen and (min-width:768px){.hero-cta .btn-glass{flex:1 1 auto;white-space:nowrap}}
+.hero-cta .btn-glass.btn-book{box-shadow:0 8px 24px rgba(240,170,20,.35)}
+.hero-addr{margin-top:14px}
+
+/* ---------- светлая палитра остальных экранов: синий вместо коричневого ---------- */
+html[data-theme="light"]:not([data-hc="1"]) .sec:not(.sec-hero),html[data-theme="light"]:not([data-hc="1"]) .hdr,html[data-theme="light"]:not([data-hc="1"]) .bar,html[data-theme="light"]:not([data-hc="1"]) .mmenu{
+  --card:rgba(255,255,255,.82);
+  --text:#14233a; --muted:#41536b;
+  --line:rgba(22,60,110,.30); --line2:rgba(22,60,110,.16);
+  --accent:#1f5fa8; --accent-d:#174a86; --accent-l:#5b8fcc; --accent-soft:rgba(31,95,168,.12);
+  --bg:rgba(255,255,255,.6); --bg3:rgba(22,60,110,.07);
+  --shadow:0 1px 12px rgba(22,60,110,.14); --shadow-lg:0 18px 50px rgba(22,60,110,.26);
+  color:#14233a
+}
+html[data-theme="light"]:not([data-hc="1"]) .glass,
+html[data-theme="light"]:not([data-hc="1"]) .sec:not(.sec-hero) :is(.sec-head,.cbox,.foot){box-shadow:0 8px 28px rgba(22,60,110,.18),inset 0 1px 0 rgba(255,255,255,.85)}
+html[data-theme="light"]:not([data-hc="1"]) .sec:not(.sec-hero) .sec-bg::after,.sec:not(.sec-hero) .sec-bg::after{background:rgba(255,255,255,.12)}
+.sec-bg{background:#cfe0f3}
+.btn-primary{background:#ffc94d;border-color:#ffc94d;color:#2a1d07}
+.btn-primary:hover{background:#ffd06b;border-color:#ffd06b;color:#2a1d07}
+html[data-theme="light"]:not([data-hc="1"]) .hdr .btn-primary,html[data-theme="light"]:not([data-hc="1"]) .sec:not(.sec-hero) .btn-primary{color:#2a1d07}
+
+/* ---------- последний экран: компактная раскладка, чтобы всё помещалось в 800 px ---------- */
+#contacts .sec-scroll{padding-top:calc(var(--hdr-h) + 8px)}
+#contacts .sec-head{margin-bottom:12px;padding:10px 18px 10px 24px!important}
+#contacts .sec-head .h2{margin-top:2px;font-size:28px}
+#contacts .sh-cta{min-height:46px}
+.addr-note{display:block;margin-top:2px;font-size:13px;color:var(--muted)}
+@media (min-width:992px){.contacts{grid-template-columns:1fr 1.15fr 1fr;gap:14px}}
+.contacts .cbox{padding:14px 16px}
+.cl{gap:12px}
+.map{min-height:0;height:250px;flex:none}
+.cbox.form .fg{margin-top:8px;gap:7px}
+.form h3{font-size:18px}
+@media (min-width:768px){.fld input,.fld select,.fld textarea{padding:7px 11px}}
+.fld-hid{display:none}
+.foot{margin-top:12px;padding:10px 18px}
+.foot p{margin:0}
+.foot p + p{margin-top:4px}
+.foot-owner{font-weight:600}
+.foot-owner a{text-decoration:underline;text-underline-offset:3px}
+html[data-theme="light"]:not([data-hc="1"]) .foot a{color:#174a86}
+
+/* ---------- добивка: коричневые акценты эталона -> синие ---------- */
+html[data-theme="light"]:not([data-hc="1"]) .sec:not(.sec-hero) .kicker{color:#1f5fa8}
+html[data-theme="light"]:not([data-hc="1"]) .sec:not(.sec-hero) .kicker::before{background:#1f5fa8}
+html[data-theme="light"]:not([data-hc="1"]) .cl .cic{background:rgba(31,95,168,.13);color:#1f5fa8}
+html[data-theme="light"]:not([data-hc="1"]) .hdr-tel:hover,html[data-theme="light"]:not([data-hc="1"]) .bi.cur{color:#1f5fa8}
+html[data-theme="light"]:not([data-hc="1"]) .sec:not(.sec-hero) .btn-ghost:hover{border-color:#1f5fa8;color:#174a86}
+html[data-theme="light"]:not([data-hc="1"]) .nav-a.cur,html[data-theme="light"]:not([data-hc="1"]) .nav-a[aria-current]{color:#14233a}
+.hero-addr .addr-link{border-bottom:0;padding:0;margin:0;display:inline-flex}
+.hero-addr .addr-link:hover{text-decoration:underline}
+.cl .addr-link{display:inline;border-bottom:0;padding:0;margin:0;text-decoration:underline;text-decoration-color:rgba(31,95,168,.45);text-underline-offset:3px}
+.cl .addr-link:hover{color:#1f5fa8}
+.map{flex:1 1 auto;min-height:250px;height:auto}
+@media screen and (min-width:768px){.hw{font-size:calc((var(--plq-w) - 2 * var(--plq-pad)) / 5.9)}}
+html[data-theme="light"]:not([data-hc="1"]) .foot{color:#22344d}
+.cl .cat-line{font-weight:500}
+
+/* карта Яндекса в узкой колонке рисует снизу «шторку» с карточкой места: обрезаем её, подпись «© Яндекс» остаётся */
+.map iframe{height:calc(100% + 78px)}
+
+/* ---------- телефон (до 767 px): правила выше для широкого экрана сюда не доходят ---------- */
+@media screen and (max-width:767px){
+  .hw{font-weight:600;letter-spacing:-.01em;font-size:clamp(34px,calc(13.4*var(--vwu,1vw)),64px)}
+  .hn{font-weight:500}
+  .hero-lead{margin-top:10px}
+  .hero-cats{margin-top:12px;gap:6px}
+  .hero-cats li{font-size:13.5px;padding:6px 12px 6px 9px}
+  .hero-cta{flex-wrap:wrap;gap:8px}
+  .hero-cta .btn-glass{flex:1 1 100%;white-space:normal;min-height:50px}
+  .hero-plq .kicker{font-size:12px}
+}
+@media (max-width:767px){
+  #contacts .sec-head{padding:12px 14px!important;flex-wrap:wrap;gap:10px}
+  #contacts .sec-head .h2{font-size:26px}
+  #contacts .sh-cta{width:100%;justify-content:center;min-height:48px}
+  .contacts .cbox{padding:16px}
+  .map{min-height:240px}
+  .map-actions{flex-wrap:wrap}
+  .map-actions .btn{flex:1 1 100%;min-height:48px;justify-content:center}
+  .fld label{font-size:14px;margin-bottom:4px}
+  .fld input,.fld select,.fld textarea{min-height:48px;padding:10px 12px;font-size:16px}
+  .cbox.form .fg{gap:10px}
+  .cbox.form .btn{min-height:50px;width:100%;justify-content:center}
+  .fnote,.fdesc{font-size:13.5px}
+  .foot{font-size:13.5px;line-height:1.45}
+  .foot a{display:inline-block;padding:6px 0}
+  .foot .fl{display:flex;flex-wrap:wrap;gap:4px 16px}
+  .hours-link{display:inline-block;padding:8px 0}
+}
+@media screen and (max-width:479px){
+  .brand-s{font-size:10.5px}
+  .brand-n{font-size:14px}
+}
+@media screen and (max-width:400px){
+  .brand-n{white-space:nowrap}
+  .hdr-book{padding:0 12px;font-size:13px;white-space:nowrap}
+  .hdr-in{gap:8px}
+}
+/* узкий телефон: в нижней панели пять пунктов вместо шести — «Почта» дублирует «Написать» */
+@media (max-width:400px){
+  .bar .bi[href^="mailto:"]{display:none}
+}
+.nowrap{white-space:nowrap}
+
+/* ================= перенос содержания nevo-class.ru (12.11): новые экраны ================= */
+.nk-sec .sec-bg{background:linear-gradient(160deg,#eef5fc 0%,#d6e6f6 100%)}
+/* в шапке семь разделов: телефон на плашке прячем раньше (он есть в меню и в нижней панели) */
+@media screen and (max-width:1679px){.hdr-tel{display:none}}
+@media screen and (min-width:1280px) and (max-width:1439px){.nav-a{padding:10px 7px;font-size:14.5px}}
+html[data-theme="dark"] .nk-sec .sec-bg{background:linear-gradient(160deg,#0f1b2b 0%,#16263b 100%)}
+.nk-sec .sec-head{padding:16px 22px}
+.nk-sec .sec-head{width:auto!important;max-width:none;display:block;align-self:stretch}
+ol.nk-list{list-style:decimal}
+ul.nk-list{list-style:disc}
+.nk-list li::marker{color:var(--accent,#1f5fa8)}
+/* контакты на телефоне прокручиваются — возвращаем карточку с адресом и карту, которые шаблон прятал ради «всё в один экран» */
+@media (max-width:760px){#contacts .cbox-info{display:block}#contacts .mapbox{padding:14px 16px;background:var(--card,rgba(255,255,255,.86));border:1px solid var(--line2,rgba(22,60,110,.16))}#contacts .mapbox .map{display:block;height:220px;min-height:220px;border-radius:12px;overflow:hidden;margin-bottom:10px}}
+.nk-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.nk-card,.nk-box,.nk-rev{background:var(--card,rgba(255,255,255,.86));border:1px solid var(--line2,rgba(22,60,110,.16));border-radius:16px;box-shadow:var(--shadow,0 1px 12px rgba(22,60,110,.14))}
+.nk-card{padding:16px 18px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.nk-card h3,.nk-box h3{font-size:19px;font-weight:600;margin:0}
+.nk-lead{margin:0;color:var(--muted);font-size:15px;line-height:1.45}
+.nk-list{margin:0;padding-left:18px;font-size:14.5px;line-height:1.45;display:grid;gap:4px}
+.nk-price{background:var(--accent-soft,rgba(31,95,168,.1));border-radius:12px;padding:10px 12px}
+.nk-price small{display:block;font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.nk-price ul{margin:4px 0 0;padding:0;list-style:none;font-weight:600;font-size:15px;display:grid;gap:2px}
+.nk-more summary{cursor:pointer;font-weight:600;font-size:14.5px;min-height:40px;display:flex;align-items:center;color:var(--accent,#1f5fa8)}
+.nk-more[open] summary{margin-bottom:6px}
+.nk-card .btn{margin-top:auto;justify-content:center}
+.nk-why{list-style:none;margin:0 0 14px;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.nk-why li{display:inline-flex;align-items:center;gap:7px;padding:7px 12px;border-radius:999px;background:var(--card,rgba(255,255,255,.86));border:1px solid var(--line2,rgba(22,60,110,.16));font-size:14px;font-weight:500}
+.nk-why .ico{width:16px;height:16px;color:var(--accent,#1f5fa8);flex:none}
+.nk-two{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:14px;align-items:start}
+.nk-box{padding:18px 20px;display:grid;gap:12px;min-width:0}
+.nk-box p{margin:0;line-height:1.5}
+.nk-lic,.nk-note{font-size:13.5px;color:var(--muted)}
+.nk-team{display:grid;gap:10px}
+.nk-person{display:flex;gap:12px;align-items:flex-start}
+.nk-person .cic{flex:none}
+.nk-person b{display:block}
+.nk-person small{display:block;color:var(--accent,#1f5fa8);font-weight:600}
+.nk-person span:not(.cic){display:block;font-size:13.5px;color:var(--muted)}
+.nk-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+.nk-gallery img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:10px;background:var(--bg3,#e3ecf6)}
+.nk-revs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.nk-rev{padding:16px 18px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.nk-rev p{margin:0;font-size:14.5px;line-height:1.5}
+.nk-rev-t{font-size:15px}
+.nk-rev-meta{margin-top:auto;display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.nk-rev-meta small{color:var(--muted)}
+.nk-center{display:flex;justify-content:center;margin-top:14px}
+.nk-center .btn{min-height:48px}
+.nk-docs{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.nk-docs a{display:flex;align-items:center;gap:10px;min-height:52px;padding:10px 14px;border-radius:12px;background:var(--card,rgba(255,255,255,.86));border:1px solid var(--line2,rgba(22,60,110,.16));color:inherit;text-decoration:none}
+.nk-docs a:hover{border-color:var(--accent,#1f5fa8)}
+.nk-docs .ico{width:20px;height:20px;color:var(--accent,#1f5fa8);flex:none}
+.nk-docs span{flex:1;min-width:0}
+.nk-docs small{color:var(--muted);white-space:nowrap}
+.nk-msg{display:flex;flex-wrap:wrap;gap:6px 14px}
+.nk-msg a{text-decoration:underline;text-underline-offset:3px;display:inline-block;padding:9px 0}
+.nk-way summary{min-height:32px;font-size:14px}
+.mbox-rev{max-width:760px;width:100%;max-height:calc(var(--vh,100vh) - 40px);display:flex;flex-direction:column}
+.nk-revall{overflow-y:auto;display:grid;gap:10px;margin-top:12px;padding-right:4px}
+@media (max-width:991px){
+  .nk-grid,.nk-revs{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .nk-two{grid-template-columns:1fr}
+}
+@media (max-width:767px){
+  .nk-grid,.nk-revs,.nk-docs{grid-template-columns:1fr}
+  .nk-sec .sec-head{padding:12px 14px}
+  .nk-card,.nk-box,.nk-rev{padding:14px 16px}
+  .nk-card .btn,.nk-center .btn{min-height:48px;width:100%}
+  .nk-why li{font-size:13.5px}
+  .nk-docs small{display:none}
+  .foot .fl a{padding:12px 0;margin:-6px 16px -6px 0}
+}
+
+/* ================= 12.11, вторая волна ================= */
+/* отзывы и документы — кнопками в конце «Контактов», открываются окнами */
+.nk-extra{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:14px}
+.nk-xbtn{display:flex;align-items:center;gap:12px;min-height:64px;padding:12px 16px;border-radius:14px;text-align:left;cursor:pointer;
+  background:var(--card,rgba(255,255,255,.88));border:1px solid var(--line2,rgba(22,60,110,.16));color:inherit;font:inherit;box-shadow:var(--shadow,0 1px 12px rgba(22,60,110,.14))}
+.nk-xbtn:hover{border-color:var(--accent,#1f5fa8)}
+.nk-xbtn>.ico{width:24px;height:24px;color:var(--accent,#1f5fa8);flex:none}
+.nk-xbtn>.ico:last-child{width:18px;height:18px;margin-left:auto;opacity:.7}
+.nk-xbtn span{display:grid;gap:2px;min-width:0}
+.nk-xbtn b{font-size:16px}
+.nk-xbtn small{font-size:13px;color:var(--muted)}
+.nk-docs-m{grid-template-columns:1fr;overflow-y:auto;margin-top:12px}
+@media (max-width:767px){.nk-extra{grid-template-columns:1fr}}
+
+/* телефон: плашка первого экрана компактнее — собор виден над ней */
+@media screen and (max-width:767px){
+  .hero-plq{padding:14px 16px 16px}
+  .hw{font-size:clamp(32px,calc(11.5*var(--vwu,1vw)),54px)}
+  .hn{font-size:17px}
+  .hero-h1{margin-top:6px}
+  .hero-lead,.hero-cats{display:none}
+  .hero-cta{flex-wrap:nowrap;margin-top:12px;gap:8px}
+  .hero-cta .btn-glass.btn-book{flex:1 1 auto}
+  .hero-cta .btn-glass.btn-call{flex:0 0 52px;width:52px;padding:0}
+  .hero-cta .btn-glass.btn-call span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+}
+
+/* телефон: без размытия под плашками — оно и давало рывки при перелистывании экранов; плашки плотнее */
+@media (max-width:767px),(pointer:coarse){
+  .glass,.hdr,.bar,.mmenu,.modal,.mbox,.sec-head,.cbox,.foot{-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
+  html[data-theme="light"]:not([data-hc="1"]) .sec-hero{--glass:rgba(255,255,255,.88)}
+  html[data-theme="light"]:not([data-hc="1"]) .glass{background-color:rgba(255,255,255,.9)}
+}
+
+/* «Об автошколе»: на фоне дорога с бегущей разметкой и проезжающая машина; играет, только пока экран открыт */
+.nk-road{position:absolute;left:0;right:0;bottom:0;height:150px;overflow:hidden;pointer-events:none}
+.nk-road::before{content:"";position:absolute;left:0;right:0;bottom:0;height:86px;background:linear-gradient(180deg,rgba(31,95,168,.10),rgba(31,95,168,.22));border-top:2px solid rgba(255,255,255,.7)}
+.nk-lane{position:absolute;left:0;bottom:40px;width:calc(100% + 120px);height:5px;opacity:.85;
+  background:repeating-linear-gradient(90deg,rgba(255,255,255,.95) 0 60px,transparent 60px 120px);
+  animation:nkLane 1.6s linear infinite;animation-play-state:paused;will-change:transform}
+.nk-car{position:absolute;left:0;bottom:46px;width:120px;height:44px;opacity:.9;transform:translateX(-140px);
+  animation:nkCar 11s linear infinite;animation-play-state:paused;will-change:transform}
+#about.active .nk-lane,#about.active .nk-car{animation-play-state:running}
+@keyframes nkLane{to{transform:translateX(-120px)}}
+@keyframes nkCar{0%{transform:translateX(-140px)}55%,100%{transform:translateX(calc(100vw + 20px))}}
+html[data-theme="dark"] .nk-road::before{background:linear-gradient(180deg,rgba(91,143,204,.08),rgba(91,143,204,.18))}
+@media (prefers-reduced-motion:reduce){.nk-lane,.nk-car{animation:none}.nk-car{display:none}}
+@media (max-width:767px){.nk-road{height:120px}.nk-road::before{height:70px}.nk-lane{bottom:32px}.nk-car{bottom:36px;width:96px;height:35px}}
+/* телефон: при смене экрана не проявляем по очереди десятки карточек и не рисуем тяжёлые тени — меньше работы во время перелистывания */
+@media (max-width:767px),(pointer:coarse){
+  .nk-sec .rv:not(.kicker):not(.h2):not(.lead),#contacts .rv:not(.kicker):not(.h2){opacity:1!important;translate:0 0!important;transition:none!important}
+  .nk-card,.nk-box,.nk-rev,.nk-xbtn,.nk-docs a,.nk-why li{box-shadow:none!important}
+  html[data-theme="light"]:not([data-hc="1"]) .sec:not(.sec-hero) :is(.sec-head,.cbox,.foot){box-shadow:0 2px 8px rgba(22,60,110,.12)!important}
+}
+.nk-tickets{font-size:14.5px}
+.nk-tickets a{display:inline-block;padding:8px 0;text-decoration:underline;text-underline-offset:3px}
+/* без размытия шапка и нижняя панель должны быть плотными — иначе сквозь них просвечивает текст */
+@media (max-width:767px),(pointer:coarse){
+  html[data-theme="light"]:not([data-hc="1"]) .hdr,html[data-theme="light"]:not([data-hc="1"]) .bar{background:#fff!important}
+  html[data-theme="dark"] .hdr,html[data-theme="dark"] .bar{background:#0a0c10!important}
+}
+@media (max-width:767px){.nk-road{bottom:calc(var(--bar-h,60px) + env(safe-area-inset-bottom,0px))}}
+
+/* ================= 12.11, третья волна: каждый экран — в один экран телефона ================= */
+.nk-tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.nk-tile{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:6px;text-align:left;cursor:pointer;font:inherit;color:inherit;
+  min-height:96px;padding:14px 34px 14px 16px;border-radius:14px;background:var(--card,rgba(255,255,255,.9));border:1px solid var(--line2,rgba(22,60,110,.16));box-shadow:var(--shadow,0 1px 12px rgba(22,60,110,.14))}
+.nk-tile:hover{border-color:var(--accent,#1f5fa8)}
+.nk-tile b{font-size:17px;line-height:1.25}
+.nk-tile small{font-size:14px;line-height:1.35;color:var(--accent-d,#174a86);font-weight:600}
+.nk-tile>.ico{position:absolute;right:12px;top:14px;width:16px;height:16px;color:var(--accent,#1f5fa8);opacity:.7}
+.nk-hint{margin:12px 0 0;font-size:14px;color:var(--muted)}
+.nk-intro{margin:0 0 12px;font-size:16px;line-height:1.5}
+.nk-why2{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.nk-why2 li{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border-radius:12px;background:var(--card,rgba(255,255,255,.88));border:1px solid var(--line2,rgba(22,60,110,.16));font-size:15px;line-height:1.35}
+.nk-why2 .ico{width:20px;height:20px;flex:none;color:var(--accent,#1f5fa8);margin-top:1px}
+.nk-btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.nk-btns .btn{min-height:48px;justify-content:center}
+.nk-list-big{font-size:16px;gap:8px;padding:16px 20px 16px 36px;border-radius:16px;background:var(--card,rgba(255,255,255,.88));border:1px solid var(--line2,rgba(22,60,110,.16))}
+.nk-team{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.nk-team .nk-person{padding:14px 16px;border-radius:14px;background:var(--card,rgba(255,255,255,.88));border:1px solid var(--line2,rgba(22,60,110,.16))}
+.nk-contacts{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr)!important}
+.nk-cl{gap:10px}
+.nk-bookwrap{max-width:560px;margin:0 auto;width:100%}
+.nk-bookwrap .cbox.form{padding:18px 20px}
+.nk-mbody{overflow-y:auto;display:grid;gap:12px;margin-top:12px;padding-right:4px}
+.nk-mbody .nk-list{font-size:15px}
+.nk-h4{margin:4px 0 0;font-size:16px}
+.nk-mbtn{justify-content:center;min-height:48px}
+#more .nk-extra{margin-top:0}
+#more .foot{margin-top:16px}
+@media (max-width:991px){.nk-tiles{grid-template-columns:repeat(2,minmax(0,1fr))}.nk-team{grid-template-columns:1fr}.nk-contacts{grid-template-columns:1fr!important}}
+@media (max-width:767px){
+  .nk-sec .sec-head{margin-bottom:10px;padding:10px 14px!important}
+  .nk-sec .sec-head .h2{font-size:23px;margin-top:2px}
+  .nk-sec .sec-head .kicker{font-size:11.5px}
+  .nk-tiles{gap:8px}
+  .nk-tile{min-height:0;padding:11px 26px 11px 12px;gap:4px}
+  .nk-tile b{font-size:15px}
+  .nk-tile small{font-size:13px}
+  .nk-tile>.ico{right:8px;top:12px}
+  .nk-hint{margin-top:8px;font-size:13px}
+  .nk-intro{font-size:15px;margin-bottom:10px}
+  .nk-why2{grid-template-columns:1fr;gap:6px}
+  .nk-why2 li{padding:8px 12px;font-size:14.5px}
+  .nk-btns{gap:8px;margin-top:10px}
+  .nk-btns .btn{flex:1 1 0;padding:0 10px}
+  .nk-btns-3 .btn{flex:1 1 calc(50% - 4px)}
+  .nk-btns-3 .btn:last-child{flex-basis:100%}
+  .nk-list-big{font-size:15px;gap:6px;padding:12px 14px 12px 30px}
+  .nk-team{gap:8px}
+  .nk-team .nk-person{padding:10px 12px}
+  .nk-person span:not(.cic){font-size:13px}
+  #contacts .mapbox .map{display:none}
+  #contacts .mapbox{padding:0;background:none;border:0}
+  #contacts .map-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  #contacts .map-actions .btn{min-height:46px;padding:6px 8px;font-size:14px;min-width:0;white-space:normal;line-height:1.15;text-align:center}
+  #contacts .mapbox{box-shadow:none!important;min-width:0}
+  #contacts .map-actions{width:100%}
+  #contacts .map-actions .btn:first-child{grid-column:1 / -1}
+  .nk-contacts{gap:10px}
+  #contacts .cbox-info{padding:12px 14px}
+  .nk-cl{gap:8px}
+  .nk-cl li{gap:10px}
+  .nk-cl .cic{width:34px;height:34px}
+  .nk-cl b{font-size:14.5px}
+  .nk-cl .addr-note{font-size:12.5px}
+  #book .sec-scroll{padding-top:calc(var(--hdr-h) + 8px)}
+  .nk-bookwrap .cbox.form{padding:14px 16px}
+  #book .form h3{font-size:19px;margin:0}
+  #book .fdesc{font-size:13.5px;margin:4px 0 0}
+  #book .fld label{font-size:13.5px;margin-bottom:3px}
+  #book .fld input,#book .fld select{min-height:44px;padding:8px 12px}
+  #book .cbox.form .fg{gap:8px;margin-top:8px}
+  #book .f2{gap:8px}
+  #book .fnote{font-size:12.5px;margin:0}
+  #book .cbox.form .btn{min-height:48px}
+  #more .nk-extra{gap:8px}
+}
+/* ================= 12.11, четвёртая волна: низ экрана не уходит под панели браузера и полоску жестов ================= */
+@media (pointer:coarse),(max-width:767px){
+  .sec-hero .sec-scroll{padding-bottom:max(28px,calc(16px + env(safe-area-inset-bottom,0px)))!important}
+}
+@media (max-width:767px),(max-height:500px){
+  .sec-scroll{padding-left:max(16px,env(safe-area-inset-left,0px))!important;padding-right:max(16px,env(safe-area-inset-right,0px))!important}
+  .hdr-in{padding-left:max(12px,env(safe-area-inset-left,0px));padding-right:max(12px,env(safe-area-inset-right,0px))}
+}
+/* низкие экраны телефонов (видимая высота до ~640 px: телефон 360×640 с панелями браузера, iPhone SE в Safari):
+   всё второстепенное — в окнах «Подробнее», экраны плотнее, чтобы не ужимать текст */
+@media (max-width:767px) and (max-height:700px){
+  :root{--hdr-h:50px;--bar-h:46px}
+  .hdr-in{height:50px}
+  .bar{padding-top:3px;padding-bottom:calc(3px + env(safe-area-inset-bottom,0px))}
+  .bar .bi{padding:4px 0}
+  .bar .bi span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .bar .bi .ico{width:22px;height:22px}
+  .sec:not(.sec-hero) .sec-scroll{padding-top:calc(var(--hdr-h) + 6px)!important;padding-bottom:calc(var(--bar-h) + 6px + env(safe-area-inset-bottom,0px))!important}
+  .nk-sec .sec-head{margin-bottom:8px;padding:8px 12px!important}
+  .nk-sec .sec-head .kicker{display:none}
+  .nk-sec .sec-head .h2{font-size:21px;margin-top:0}
+  .nk-tile{padding:9px 24px 9px 11px}
+  .nk-hint{display:none}
+  .nk-intro{display:none}
+  .nk-why2 li{padding:7px 10px;font-size:14px}
+  .nk-btns{margin-top:8px}
+  .nk-btns .btn{min-height:44px}
+  .nk-btns-3 .btn,.nk-btns-3 .btn:last-child{flex:1 1 0;font-size:13.5px;padding:0 6px}
+  .nk-btns-3 .btn .ico{display:none}
+  .nk-list-big{padding:10px 12px 10px 28px;gap:4px}
+  .nk-team .nk-person{padding:8px 10px}
+  #contacts .cbox-info{padding:10px 12px}
+  .nk-cl{gap:6px}
+  .nk-cl .cic{width:30px;height:30px}
+  .nk-cl .addr-note{display:none}
+  #contacts .map-actions{grid-template-columns:1fr 1fr}
+  #contacts .map-actions .btn:first-child{grid-column:auto}
+  #contacts .map-actions .btn:last-child{display:none}
+  #contacts .map-actions .btn{min-height:44px}
+  #book .fdesc{display:none}
+  #book .fld input,#book .fld select{min-height:42px;padding:7px 12px}
+  #book .cbox.form .fg{gap:6px;margin-top:6px}
+  #book .fld label{margin-bottom:2px}
+  .nk-xbtn{min-height:56px;padding:10px 14px}
+  #more .foot{margin-top:10px;font-size:12.5px}
+}
+/* ================= 12.11, пятая волна: без наездов на телефонах ================= */
+@media (max-width:767px){
+  /* точки навигации справа не прижимаются к карточкам */
+  .sec:not(.sec-hero) .sec-scroll{padding-right:max(20px,env(safe-area-inset-right,0px))!important}
+  .dots{right:-16px}
+  /* в «Контактах» обе кнопки маршрута — в одну строку */
+  #contacts .map-actions .btn .ico{display:none}
+  #contacts .map-actions .btn{padding:6px 5px;font-size:13.5px}
+  /* «Об автошколе»: дорога с машиной — узкой полосой ниже кнопок */
+  .nk-road{height:40px}
+  .nk-road::before{height:26px}
+  .nk-lane{bottom:11px}
+  .nk-car{bottom:6px;width:64px;height:24px}
+  #about .sec-scroll{padding-bottom:calc(var(--bar-h,60px) + 48px + env(safe-area-inset-bottom,0px))!important}
+}
+/* планшеты и небольшие ноутбуки: карточки не заходят под точки навигации */
+@media (min-width:768px) and (max-width:1439px){
+  .sec:not(.sec-hero) .sec-scroll{padding-right:52px!important}
+}
+@media (max-width:400px){
+  /* длинные слова в плитках услуг («Индивидуальное», «Контраварийная») не заходят под стрелку */
+  .nk-tile{padding-right:22px}
+  .nk-tile>.ico{right:6px;width:14px;height:14px}
+  .nk-tile b{font-size:14px;-webkit-hyphens:auto;hyphens:auto}
+}
+@media (max-width:767px) and (max-height:700px){
+  /* низкие телефоны: места под дорогу нет — убираем её, кнопки не ложатся на машину */
+  .nk-road{display:none}
+  #about .sec-scroll{padding-bottom:calc(var(--bar-h) + 6px + env(safe-area-inset-bottom,0px))!important}
+}
+/* часы приёма не рвутся посередине («Сб 10–» / «14») */
+.nk-cl .nw{white-space:nowrap}
+@media (max-width:767px){
+  /* под кнопками маршрута не светится подложка карточки */
+  #contacts .mapbox::before,#contacts .mapbox::after{display:none}
+}
+/* планшеты и ноутбуки: дорога с машиной стоит над нижней панелью, а не под ней */
+@media (min-width:768px){
+  .nk-road{height:96px;bottom:calc(var(--bar-h,60px) + 2px + env(safe-area-inset-bottom,0px))}
+}
+@media (min-width:768px) and (max-width:991px){
+  .nk-road{bottom:calc(var(--bar-h,60px) + 10px + env(safe-area-inset-bottom,0px))}
+}
+/* ================= 12.11, шестая волна: «Об автошколе» — живой фон-город (SVG + CSS, без библиотек и видео) =================
+   дороги — в свободных полосах над и под текстом (текст стоит по центру экрана), под карточки фон не заходит */
+.nk-city{position:absolute;left:0;right:0;top:var(--hdr-h);bottom:calc(var(--bar-h,60px) + env(safe-area-inset-bottom,0px));overflow:hidden;pointer-events:none;
+  --road:rgba(31,95,168,.11);--edge:rgba(255,255,255,.8);--dash:rgba(255,255,255,.95);--sky:rgba(31,95,168,.09)}
+.nkc-road{position:absolute;left:0;right:0;height:var(--rh);background:var(--road);border-top:2px solid var(--edge);border-bottom:2px solid var(--edge)}
+.nkc-r1{top:clamp(64px,12%,120px);--rh:24px}
+.nkc-r2{display:none;bottom:118px;--rh:30px}
+.nkc-r3{bottom:4px;--rh:40px}
+.nkc-sky{position:absolute;left:0;width:100%;height:clamp(40px,7vh,62px);bottom:calc(100% + 2px);background:var(--sky);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 140'%3E%3Cpath d='M0 140V96H60V80H110V96H150V70H220V96H250V86H295V140ZM300 140V92H328V74H336V62C336 42 350 28 368 25V16H366V12H374V16H372V25C390 28 404 42 404 62V74H412V92H440V140ZM445 140V84H525V96H565V76H625V96H655V90H715V140ZM720 140V96H764V60L772 56V18L776 0L780 18V56L788 60V96H832V140ZM840 140V78H910V96H960V84H1020V96H1200V140Z'/%3E%3C/svg%3E") left bottom/auto 100% repeat-x;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 140'%3E%3Cpath d='M0 140V96H60V80H110V96H150V70H220V96H250V86H295V140ZM300 140V92H328V74H336V62C336 42 350 28 368 25V16H366V12H374V16H372V25C390 28 404 42 404 62V74H412V92H440V140ZM445 140V84H525V96H565V76H625V96H655V90H715V140ZM720 140V96H764V60L772 56V18L776 0L780 18V56L788 60V96H832V140ZM840 140V78H910V96H960V84H1020V96H1200V140Z'/%3E%3C/svg%3E") left bottom/auto 100% repeat-x}
+.nkc-lane{position:absolute;left:0;right:0;top:50%;height:3px;margin-top:-1.5px;background:repeating-linear-gradient(90deg,var(--dash) 0 30px,transparent 30px 64px)}
+.nkc-tree,.nkc-tl{position:absolute;bottom:calc(100% + 2px);z-index:0}
+.nkc-tree{width:26px;height:42px}
+.nkc-r2 .nkc-tree{width:32px;height:51px}
+.nkc-r3 .nkc-tree{width:34px;height:54px}
+.nkc-tl{width:11px;height:46px}
+.nkc-r2 .nkc-tl{width:13px;height:56px}
+.nkc-r3 .nkc-tl{width:14px;height:60px}
+.nkc-tl circle{opacity:.18;animation:9s linear infinite;animation-play-state:paused}
+.nkc-tl .r{animation-name:nkcR}.nkc-tl .y{animation-name:nkcY}.nkc-tl .g{animation-name:nkcG}
+/* ближняя полоса — ниже и впереди, встречная — чуть выше, позади и бледнее */
+.nkc-v{position:absolute;left:0;z-index:2;bottom:3px;width:var(--w);height:auto;transform:translateX(-220px);
+  animation:nkcGo var(--t) linear var(--d) infinite;animation-play-state:paused;will-change:transform}
+.nkc-v.nkc-back{z-index:1;width:calc(var(--w) * .8);bottom:calc(var(--rh) * .5 + 1px);opacity:.8;animation-name:nkcBack}
+#about.active .nkc-v,#about.active .nkc-tl circle{animation-play-state:running}
+@keyframes nkcGo{from{transform:translateX(-220px)}to{transform:translateX(calc(100vw + 40px))}}
+@keyframes nkcBack{from{transform:translateX(calc(100vw + 40px)) scaleX(-1)}to{transform:translateX(-220px) scaleX(-1)}}
+@keyframes nkcR{0%,44%{opacity:1}45%,100%{opacity:.18}}
+@keyframes nkcY{0%,44%{opacity:.18}45%,54%{opacity:1}55%,89%{opacity:.18}90%,100%{opacity:1}}
+@keyframes nkcG{0%,54%{opacity:.18}55%,89%{opacity:1}90%,100%{opacity:.18}}
+html[data-theme="dark"] .nk-city{--road:rgba(91,143,204,.13);--edge:rgba(255,255,255,.16);--dash:rgba(255,255,255,.32);--sky:rgba(140,175,220,.07);opacity:.85}
+/* высокие экраны (iPad, большие мониторы): третья дорога в нижней полосе */
+@media (min-width:768px) and (min-height:940px){.nkc-r2{display:block}}
+/* телефоны: свободна только полоса под кнопками — там одна дорога, без верхней */
+@media (max-width:767px){
+  .nkc-r1,.nkc-r2{display:none}
+  .nkc-mx,.nkc-r3 .nkc-tl,.nkc-r3 .nkc-tree{display:none}
+  .nkc-r3{--rh:30px;bottom:6px}
+  .nkc-v{width:calc(var(--w) * .6)}
+  .nkc-v.nkc-back{width:calc(var(--w) * .5);bottom:calc(var(--rh) * .5 - 3px)}
+}
+@media (max-width:767px) and (max-height:700px){
+  .nkc-r3{--rh:16px;bottom:2px}
+  .nkc-r3 .nkc-tl,.nkc-r3 .nkc-tree{display:none}
+  .nkc-v{width:calc(var(--w) * .36)}
+  .nkc-v.nkc-back{width:calc(var(--w) * .3);bottom:calc(var(--rh) * .5 - 4px)}
+}
+@media (prefers-reduced-motion:reduce){.nkc-v,.nkc-tl circle{animation:none}.nkc-v{transform:translateX(30vw)}.nkc-v.nkc-back{transform:translateX(60vw) scaleX(-1)}}
+/* зазор снизу: плашка первого экрана выше края на ~3 % видимой высоты, значки нижней панели не у самого края (полоска жестов) */
+@media (pointer:coarse),(max-width:767px){
+  .sec-hero .sec-scroll{padding-bottom:calc(max(28px,calc(16px + env(safe-area-inset-bottom,0px))) + var(--vh,100vh) * .03)!important}
+}
+@media (max-width:767px){
+  .bar{padding-bottom:max(10px,calc(4px + env(safe-area-inset-bottom,0px)))}
+}
+@media (max-width:767px) and (min-height:701px){:root{--bar-h:64px}}
+@media (min-width:768px) and (max-width:991px){.nk-city{bottom:calc(var(--bar-h,60px) + 10px + env(safe-area-inset-bottom,0px))}}
+/* ================= 12.11, седьмая волна: увеличенный шрифт телефона (встроенный браузер Telegram и т. п.) =================
+   если раздел не влезает даже ужатым — включается плотная раскладка (та же, что у низких телефонов); класс ставит скрипт */
+@media (max-width:767px){
+  html.nk-compact{--hdr-h:50px;--bar-h:46px}
+  html.nk-compact .hdr-in{height:50px}
+  html.nk-compact .bar{padding-top:3px;padding-bottom:calc(3px + env(safe-area-inset-bottom,0px))}
+  html.nk-compact .bar .bi{padding:4px 0}
+  html.nk-compact .bar .bi span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  html.nk-compact .bar .bi .ico{width:22px;height:22px}
+  html.nk-compact .sec:not(.sec-hero) .sec-scroll{padding-top:calc(var(--hdr-h) + 6px)!important;padding-bottom:calc(var(--bar-h) + 6px + env(safe-area-inset-bottom,0px))!important}
+  html.nk-compact .nk-sec .sec-head{margin-bottom:8px;padding:8px 12px!important}
+  html.nk-compact .nk-sec .sec-head .kicker{display:none}
+  html.nk-compact .nk-sec .sec-head .h2{font-size:21px;margin-top:0}
+  html.nk-compact .nk-tile{padding:9px 24px 9px 11px}
+  html.nk-compact .nk-hint{display:none}
+  html.nk-compact .nk-intro{display:none}
+  html.nk-compact .nk-why2 li{padding:7px 10px;font-size:14px}
+  html.nk-compact .nk-btns{margin-top:8px}
+  html.nk-compact .nk-btns .btn{min-height:44px}
+  html.nk-compact .nk-btns-3 .btn,html.nk-compact .nk-btns-3 .btn:last-child{flex:1 1 0;font-size:13.5px;padding:0 6px}
+  html.nk-compact .nk-btns-3 .btn .ico{display:none}
+  html.nk-compact .nk-list-big{padding:10px 12px 10px 28px;gap:4px}
+  html.nk-compact .nk-team .nk-person{padding:8px 10px}
+  html.nk-compact #contacts .cbox-info{padding:10px 12px}
+  html.nk-compact .nk-cl{gap:6px}
+  html.nk-compact .nk-cl .cic{width:30px;height:30px}
+  html.nk-compact .nk-cl .addr-note{display:none}
+  html.nk-compact #contacts .map-actions{grid-template-columns:1fr 1fr}
+  html.nk-compact #contacts .map-actions .btn:first-child{grid-column:auto}
+  html.nk-compact #contacts .map-actions .btn:last-child{display:none}
+  html.nk-compact #contacts .map-actions .btn{min-height:44px}
+  html.nk-compact #book .fdesc{display:none}
+  html.nk-compact #book .fld input,html.nk-compact #book .fld select{min-height:42px;padding:7px 12px}
+  html.nk-compact #book .cbox.form .fg{gap:6px;margin-top:6px}
+  html.nk-compact #book .fld label{margin-bottom:2px}
+  html.nk-compact .nk-xbtn{min-height:56px;padding:10px 14px}
+  html.nk-compact #more .foot{margin-top:10px;font-size:12.5px}
+  html.nk-compact .nk-road{display:none}
+  html.nk-compact #about .sec-scroll{padding-bottom:calc(var(--bar-h) + 6px + env(safe-area-inset-bottom,0px))!important}
+  html.nk-compact .nkc-r3{--rh:16px;bottom:2px}
+  html.nk-compact .nkc-r3 .nkc-tl,html.nk-compact .nkc-r3 .nkc-tree{display:none}
+  html.nk-compact .nkc-v{width:calc(var(--w) * .36)}
+  html.nk-compact .nkc-v.nkc-back{width:calc(var(--w) * .3);bottom:calc(var(--rh) * .5 - 4px)}
+}
+/* подписи нижней панели не влезают (крупный шрифт) — только значки */
+html.nk-bar-icons .bar .bi span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+html.nk-bar-icons .bar .bi .ico{width:24px;height:24px}
+
+/* ================= 12.11, восьмая волна: на каждом экране своя живая картинка (SVG + CSS/SMIL, без библиотек) =================
+   полоса внизу раздела, высоту и место ей задаёт скрипт: только свободное место над нижней панелью, текст не закрывает */
+.nk-anim,.nk-diag{--road:rgba(31,95,168,.11);--edge:rgba(255,255,255,.85);--dash:rgba(255,255,255,.95);--pad:rgba(31,95,168,.07);--street:rgba(255,255,255,.9);--water:rgba(31,95,168,.16);--bank:rgba(31,95,168,.10);--pole:#7d8ea5}
+html[data-theme="dark"] .nk-anim,html[data-theme="dark"] .nk-diag{--road:rgba(91,143,204,.14);--edge:rgba(255,255,255,.18);--dash:rgba(255,255,255,.34);--pad:rgba(91,143,204,.08);--street:rgba(255,255,255,.14);--water:rgba(91,143,204,.18);--bank:rgba(91,143,204,.12);opacity:.88}
+.nk-anim{position:absolute;left:0;right:0;bottom:calc(var(--bar-h,60px) + env(safe-area-inset-bottom,0px));height:90px;overflow:hidden;pointer-events:none}
+.nk-anim svg{display:block;width:100%;height:100%;overflow:visible}
+.nk-anim .g-road{fill:var(--road)}
+.nk-anim .g-edge{stroke:var(--edge);stroke-width:2;fill:none}
+.nk-anim .g-dash{stroke:var(--dash);stroke-width:3;stroke-dasharray:30 34;fill:none}
+.nk-anim .g-pad{fill:var(--pad)}
+.nk-anim .g-pole{stroke:var(--pole);stroke-width:3;fill:none}
+.nk-anim .g-curb{stroke:rgba(31,95,168,.35);stroke-width:3}
+.nk-anim .g-street{stroke:var(--street);stroke-width:14;fill:none}
+.nk-anim .g-water{fill:var(--water)}
+.nk-anim .g-wave{stroke:rgba(255,255,255,.7);stroke-width:2;stroke-dasharray:18 26;fill:none;animation:nkaWave 3s linear infinite}
+.nk-anim .g-bank{fill:var(--bank)}
+.nk-anim .g-pier{fill:#9fb3c8}
+.nk-anim .g-deck{fill:#5a6f89}
+.nka-route{fill:none;stroke:#1f5fa8;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1000;stroke-dashoffset:1000;opacity:.7}
+.nka-st circle{fill:#fff;stroke:#1f5fa8;stroke-width:3}
+.nka-st text{font:700 15px/1 system-ui,sans-serif;fill:#1f5fa8}
+.nka-st1 circle{animation:nkaSt1 14s linear infinite}.nka-st2 circle{animation:nkaSt2 14s linear infinite}.nka-st3 circle{animation:nkaSt3 14s linear infinite}.nka-st4 circle{animation:nkaSt4 14s linear infinite}
+.nka-flag{transform-box:fill-box;transform-origin:left center;animation:nkaFlag 1.2s ease-in-out infinite alternate}
+.nka-howcar{animation:nkaHow 14s linear infinite}
+.nka-park{animation:nkaPark 12s linear infinite}
+.nka-rev{fill:#fff;opacity:0;animation:nkaRev 12s linear infinite}
+.nka-pinb{animation:nkaPin 1.4s ease-in-out infinite}
+.nka-l{opacity:.18}
+.nka-lr{animation:nkaLR 9s linear infinite}.nka-ly{animation:nkaLY 9s linear infinite}.nka-lg{animation:nkaLG 9s linear infinite}
+.nka-bookcar{animation:nkaBook 9s infinite}
+.nka-bookcar2{animation:nkaBook2 9s linear infinite}
+.nka-leafl{transform-box:view-box;transform-origin:380px 59px;animation:nkaLeafL 12s ease-in-out infinite}
+.nka-leafr{transform-box:view-box;transform-origin:620px 59px;animation:nkaLeafR 12s ease-in-out infinite}
+.nka-boat{animation:nkaBoat 12s linear infinite}
+.nka-mcar1{animation:nkaM1 12s linear infinite}
+.nka-mcar2{animation:nkaM2 12s linear infinite}
+@keyframes nkaWave{to{stroke-dashoffset:-44}}
+@keyframes nkaSt1{0%,9.9%{fill:#fff}10%,95%{fill:#9be3b7}100%{fill:#fff}}
+@keyframes nkaSt2{0%,25.9%{fill:#fff}26%,95%{fill:#9be3b7}100%{fill:#fff}}
+@keyframes nkaSt3{0%,41.9%{fill:#fff}42%,95%{fill:#9be3b7}100%{fill:#fff}}
+@keyframes nkaSt4{0%,57.9%{fill:#fff}58%,95%{fill:#9be3b7}100%{fill:#fff}}
+@keyframes nkaFlag{from{transform:skewY(0)}to{transform:skewY(-8deg)}}
+@keyframes nkaHow{0%{transform:translateX(-160px);opacity:0}3%{opacity:1}10%,16%{transform:translateX(155px)}26%,32%{transform:translateX(355px)}42%,48%{transform:translateX(555px)}58%,64%{transform:translateX(755px)}74%,80%{transform:translateX(875px);opacity:1}92%{transform:translateX(1150px);opacity:0}100%{transform:translateX(1150px);opacity:0}}
+@keyframes nkaPark{0%{transform:translate(-160px,46px);opacity:0}4%{opacity:1}30%,36%{transform:translate(720px,46px)}58%,76%{transform:translate(565px,58px)}86%{transform:translate(760px,48px);opacity:1}97%,100%{transform:translate(1150px,46px);opacity:0}}
+@keyframes nkaRev{0%,36%{opacity:0}37%,58%{opacity:1}59%,100%{opacity:0}}
+@keyframes nkaPin{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes nkaLR{0%,50%{opacity:1}50.1%,100%{opacity:.18}}
+@keyframes nkaLY{0%,50%{opacity:.18}50.1%,56%{opacity:1}56.1%,92%{opacity:.18}92.1%,100%{opacity:1}}
+@keyframes nkaLG{0%,56%{opacity:.18}56.1%,92%{opacity:1}92.1%,100%{opacity:.18}}
+@keyframes nkaBook{0%{transform:translateX(-160px);opacity:0;animation-timing-function:ease-out}4%{opacity:1;animation-timing-function:ease-out}30%{transform:translateX(392px);animation-timing-function:linear}56%{transform:translateX(392px);animation-timing-function:ease-in}84%{transform:translateX(1150px);opacity:1}86%,100%{transform:translateX(1150px);opacity:0}}
+@keyframes nkaBook2{0%{transform:translateX(1150px);opacity:0}6%{opacity:1}40%{transform:translateX(-80px);opacity:1}44%,100%{transform:translateX(-120px);opacity:0}}
+@keyframes nkaLeafL{0%,40%{transform:rotate(0)}48%,72%{transform:rotate(-38deg)}80%,100%{transform:rotate(0)}}
+@keyframes nkaLeafR{0%,40%{transform:rotate(0)}48%,72%{transform:rotate(38deg)}80%,100%{transform:rotate(0)}}
+@keyframes nkaBoat{0%,49%{transform:translate(250px,74px);opacity:0}52%{opacity:1}70%{opacity:1}73%,100%{transform:translate(690px,74px);opacity:0}}
+@keyframes nkaM1{0%{transform:translateX(-120px);opacity:0}3%{opacity:1}36%{transform:translateX(900px);opacity:1}39%,100%{transform:translateX(960px);opacity:0}}
+@keyframes nkaM2{0%,82%{transform:translateX(1100px);opacity:0}85%{opacity:1}99%{transform:translateX(120px);opacity:1}100%{transform:translateX(100px);opacity:0}}
+/* «Обучение и цены»: дороги по диагонали за плитками — плитки и заголовок плотные, текст поверх не просвечивает */
+.nk-diag{position:absolute;left:0;right:0;top:var(--hdr-h);bottom:calc(var(--bar-h,60px) + env(safe-area-inset-bottom,0px));overflow:hidden;pointer-events:none}
+.nkd-r{position:absolute;left:50%;top:50%;width:240vmax;height:46px;margin:-23px 0 0 -120vmax;background:var(--road);border-top:2px solid var(--edge);border-bottom:2px solid var(--edge)}
+.nkd-a{transform:rotate(-17deg)}
+.nkd-b{transform:rotate(17deg)}
+.nkd-dash{position:absolute;left:0;right:0;top:50%;height:3px;margin-top:-1.5px;background:repeating-linear-gradient(90deg,var(--dash) 0 26px,transparent 26px 56px)}
+.nkd-car{position:absolute;left:0;width:46px;height:23px;top:calc(50% + 2px);will-change:transform;animation:nkdGo 18s linear infinite}
+.nkd-back{top:calc(50% - 25px);animation-name:nkdBack}
+.nkd-c2{animation-duration:22s;animation-delay:-9s}.nkd-c3{animation-duration:20s;animation-delay:-6s}.nkd-c4{animation-duration:24s;animation-delay:-15s}
+@keyframes nkdGo{from{transform:translateX(70vmax)}to{transform:translateX(170vmax)}}
+@keyframes nkdBack{from{transform:translateX(170vmax) scaleX(-1)}to{transform:translateX(70vmax) scaleX(-1)}}
+#services .nk-tile{background:var(--card-solid,#fff)}
+html[data-theme="dark"] #services .nk-tile{--card-solid:#15243a}
+#services .sec-head{background:rgba(255,255,255,.96)}
+html[data-theme="dark"] #services .sec-head{background:rgba(16,28,46,.96)}
+@media (max-width:767px){.nkd-r{height:34px;margin-top:-17px}.nkd-car{width:34px;height:17px}.nkd-back{top:calc(50% - 18px)}}
+/* вне активного раздела и при «меньше движения» — стоят */
+.sec:not(.active) .nk-anim *,.sec:not(.active) .nk-diag *{animation-play-state:paused!important}
+@media (prefers-reduced-motion:reduce){.nk-anim *,.nk-diag *{animation:none!important}}
+/* телефон: текст раздела — сразу под шапкой, всё свободное место — внизу, под живую картинку */
+/* (снято 12.11: текст снова по центру, живых картинок внизу нет) */
+
+/* восьмая волна, правка: дороги контрастнее, позиции под обрезку по бокам на телефоне */
+.nk-anim,.nk-diag{--road:rgba(31,95,168,.16);--pad:rgba(31,95,168,.09)}
+.nk-anim .g-street2{stroke:var(--road);stroke-width:30;fill:none}
+.nk-anim .g-cdash{stroke:var(--dash);stroke-width:2.5;stroke-dasharray:16 18;fill:none}
+@keyframes nkaSt1{0%,9.9%{fill:#fff}10%,95%{fill:#9be3b7}100%{fill:#fff}}
+@keyframes nkaHow{0%{transform:translateX(-160px);opacity:0}3%{opacity:1}10%,16%{transform:translateX(258px)}26%,32%{transform:translateX(378px)}42%,48%{transform:translateX(498px)}58%,64%{transform:translateX(618px)}74%,80%{transform:translateX(700px);opacity:1}92%{transform:translateX(1150px);opacity:0}100%{transform:translateX(1150px);opacity:0}}
+@keyframes nkaPark{0%{transform:translate(-160px,36px);opacity:0}4%{opacity:1}30%,36%{transform:translate(620px,36px)}58%,76%{transform:translate(497px,49px)}86%{transform:translate(660px,38px);opacity:1}97%,100%{transform:translate(1150px,36px);opacity:0}}
+@keyframes nkaBook{0%{transform:translateX(-160px);opacity:0;animation-timing-function:ease-out}4%{opacity:1;animation-timing-function:ease-out}30%{transform:translateX(398px);animation-timing-function:linear}56%{transform:translateX(398px);animation-timing-function:ease-in}84%{transform:translateX(1150px);opacity:1}86%,100%{transform:translateX(1150px);opacity:0}}
+@keyframes nkaBoat{0%,49%{transform:translate(300px,72px);opacity:0}52%{opacity:1}70%{opacity:1}73%,100%{transform:translate(640px,72px);opacity:0}}
+.nka-leafl{transform-origin:380px 58px}.nka-leafr{transform-origin:620px 58px}
+@keyframes nkaHow{0%{transform:translateX(-160px);opacity:0}3%{opacity:1}10%,16%{transform:translateX(298px)}26%,32%{transform:translateX(398px)}42%,48%{transform:translateX(498px)}58%,64%{transform:translateX(598px)}74%,80%{transform:translateX(668px);opacity:1}92%{transform:translateX(1150px);opacity:0}100%{transform:translateX(1150px);opacity:0}}
+@keyframes nkaPark{0%{transform:translate(-160px,36px);opacity:0}4%{opacity:1}30%,36%{transform:translate(600px,36px)}58%,76%{transform:translate(500px,49px)}86%{transform:translate(640px,38px);opacity:1}97%,100%{transform:translate(1150px,36px);opacity:0}}
+
+/* 12.11: живые картинки сняты до выбора Сергея; убираем запас под дорогу в «Об автошколе» */
+#about .sec-scroll{padding-bottom:calc(var(--bar-h,60px) + 12px + env(safe-area-inset-bottom,0px))!important}
+@media (max-width:767px) and (max-height:700px){#about .sec-scroll{padding-bottom:calc(var(--bar-h) + 6px + env(safe-area-inset-bottom,0px))!important}}
+@media (max-width:767px){html.nk-compact #about .sec-scroll{padding-bottom:calc(var(--bar-h) + 6px + env(safe-area-inset-bottom,0px))!important}}
+
+/* ================= 12.11, девятая волна: живые фоны за содержимым (выбор Сергея: огни, карта района, Нева) ================= */
+
+.vb{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.vb svg{position:absolute;inset:0;width:100%;height:100%}
+/* 1 */
+.vb1 .t-body{fill:none;stroke:rgba(31,95,168,.08);stroke-width:110}
+.vb1 .t-b2{stroke-width:80}
+.vb1 .t-lane{fill:none;stroke:rgba(31,95,168,.24);stroke-width:1.6}
+.vb1 .t-core,.vb1 .t-halo{fill:none;stroke-linecap:round;animation:vbMove var(--t) linear var(--d) infinite}
+.vb1 .t-core{stroke-width:3.8;stroke-dasharray:42 958}
+.vb1 .t-halo{stroke-width:11;stroke-dasharray:170 830;opacity:.32}
+.vb1 .t-a{stroke:#f2a12b}.vb1 .t-w{stroke:#2f7de1}
+@keyframes vbMove{from{stroke-dashoffset:1000}to{stroke-dashoffset:0}}
+/* 2 */
+.vb2 .mp{opacity:.95}
+.vb2 .mp-drift{transform-box:view-box;transform-origin:50% 50%;animation:vbDrift 60s ease-in-out infinite alternate}
+.vb2 .mp-river{fill:rgba(31,95,168,.17)}
+.vb2 .mp-m1,.vb2 .mp-m2,.vb2 .mp-m3,.vb2 .mp-m4{fill:none;stroke-linecap:round;stroke-linejoin:round}
+.vb2 .mp-m1{stroke:rgba(31,95,168,.38);stroke-width:4.5}
+.vb2 .mp-m2{stroke:rgba(31,95,168,.30);stroke-width:3.2}
+.vb2 .mp-m3{stroke:rgba(31,95,168,.18);stroke-width:2}
+.vb2 .mp-m4{stroke:rgba(31,95,168,.12);stroke-width:1.3}
+.vb2 .mp-none{fill:none;stroke:none}
+.vb2 .mp-a .mp-core{fill:#f2a12b}.vb2 .mp-a .mp-halo{fill:rgba(242,161,43,.28)}
+.vb2 .mp-w .mp-core{fill:#2f7de1}.vb2 .mp-w .mp-halo{fill:rgba(47,125,225,.25)}
+.vb2 .mp-dot{fill:#1f5fa8}.vb2 .mp-ring{fill:none;stroke:#1f5fa8;stroke-width:3;transform-box:fill-box;transform-origin:center;animation:vbPulse 2.4s ease-out infinite}
+@keyframes vbDrift{from{transform:scale(1.04) translate(-1.2%,.8%)}to{transform:scale(1.12) translate(1.2%,-.8%)}}
+@keyframes vbPulse{from{transform:scale(.6);opacity:.9}to{transform:scale(3.2);opacity:0}}
+
+.vb4 video{background:#dfeaf6 center/cover no-repeat;position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.v4-veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(238,245,252,.40),rgba(214,230,246,.34))}
+@media (prefers-reduced-motion:reduce){.vb *{animation:none!important}}
+
+.sec-bg .vb{z-index:0}
+/* разные виды одного фона на разных экранах */
+.vb1.vb-b svg{transform:scaleX(-1)}
+.vb1.vb-c svg{transform:scaleY(-1)}
+.vb2 .mp{transform-origin:50% 48.4%}
+.vb2.vb-z1 .mp{transform:scale(1)}
+.vb2.vb-z2 .mp{transform:scale(1.5) translate(-12%,6%)}
+.vb2.vb-z3 .mp{transform:scale(1.9)}
+.vb4.vb-v2 video{object-position:20% 50%}
+/* тёмная тема */
+html[data-theme="dark"] .vb1 .t-lane{stroke:rgba(140,180,230,.22)}
+html[data-theme="dark"] .vb1 .t-body{stroke:rgba(140,180,230,.06)}
+html[data-theme="dark"] .vb2 .mp-m1{stroke:rgba(140,180,230,.34)}
+html[data-theme="dark"] .vb2 .mp-m2{stroke:rgba(140,180,230,.27)}
+html[data-theme="dark"] .vb2 .mp-m3{stroke:rgba(140,180,230,.19)}
+html[data-theme="dark"] .vb2 .mp-m4{stroke:rgba(140,180,230,.12)}
+html[data-theme="dark"] .vb2 .mp-river{fill:rgba(91,143,204,.16)}
+html[data-theme="dark"] .vb2 .mp-dot{fill:#5b8fcc}html[data-theme="dark"] .vb2 .mp-ring{stroke:#5b8fcc}
+html[data-theme="dark"] .v4-veil{background:linear-gradient(180deg,rgba(12,22,38,.55),rgba(16,30,50,.5))}
+/* вне активного раздела всё стоит */
+.sec:not(.active) .vb *{animation-play-state:paused!important}
+/* телефон: фоны чуть контрастнее — экран маленький, карточки закрывают большую часть */
+@media (max-width:767px){
+  .vb1 .t-lane{stroke:rgba(31,95,168,.32)}.vb1 .t-core{stroke-width:5}.vb1 .t-halo{stroke-width:14;opacity:.38}
+  .vb2 .mp-m1{stroke:rgba(31,95,168,.5)}.vb2 .mp-m2{stroke:rgba(31,95,168,.4)}.vb2 .mp-m3{stroke:rgba(31,95,168,.28)}
+}
+
+/* телефон и планшет: переключатель светлой/тёмной темы виден прямо в шапке (раньше — только внутри меню-бургера);
+   А−/А+ и «для слабовидящих» остаются в меню; кнопка записи на узком экране короче, чтобы всё поместилось */
+@media screen and (max-width:860px){
+  .hdr-a11y{display:flex!important;border-left:0;padding-left:0;margin-left:0}
+  .hdr-a11y #fsDown,.hdr-a11y #fsUp,.hdr-a11y #hcBtn{display:none}
+  .hdr-a11y #themeBtn{width:42px;height:42px;opacity:1;border-radius:12px;border:1px solid rgba(255,255,255,.35)}
+  html[data-theme="light"]:not([data-hc="1"]) .hdr-a11y #themeBtn{border:1.5px solid rgba(31,95,168,.6);background:rgba(31,95,168,.1);color:#1f5fa8}
+}
+@media screen and (max-width:480px){
+  .hdr-book{font-size:0!important;padding:0 14px!important}
+  .hdr-book::after{content:"Записаться";font-size:14px}
+  .hdr-tools{gap:6px}
+}
+
+/* первый экран: мессенджеры и соцсети школы — WhatsApp, Telegram, ВКонтакте (ссылки с сайта школы, страница «Контакты») */
+.hero-soc{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:12px}
+.soc-cap{font-size:14px;font-weight:600;opacity:.9;margin-right:2px}
+.soc{display:inline-flex;align-items:center;gap:7px;min-height:44px;padding:4px 12px 4px 4px;border-radius:999px;background:rgba(255,255,255,.88);border:1px solid rgba(31,95,168,.22);color:#12365f;font-weight:600;font-size:14px;text-decoration:none;text-shadow:none;transition:transform .15s,box-shadow .15s}
+.soc:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(20,40,70,.18)}
+.soc-i{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;color:#fff;flex:none}
+.soc-i svg{width:19px;height:19px}
+.soc-wa .soc-i{background:#25d366}.soc-tg .soc-i{background:#2aabee}.soc-vk .soc-i{background:#0077ff}
+.soc-tg .soc-i svg{margin-left:-2px}.soc-vk .soc-i svg{width:21px}
+html[data-theme="dark"] .soc{background:rgba(16,28,46,.82);border-color:rgba(255,255,255,.2);color:#e6eef8}
+/* телефон: подпись и три круглых значка в одну строку */
+@media screen and (max-width:767px){
+  .hero-soc{margin-top:10px;gap:10px;flex-wrap:nowrap}
+  .soc{padding:0;min-height:0;background:none;border:0;box-shadow:none}
+  .soc .soc-n{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .soc-i{width:44px;height:44px;box-shadow:0 4px 12px rgba(20,40,70,.22)}
+  .soc-i svg{width:23px;height:23px}.soc-vk .soc-i svg{width:25px}
+  html[data-theme="dark"] .soc{background:none}
+}
+
+/* ноутбук и планшет (от 768 px): плашки категорий — всегда одной строкой; «Мы на связи» — подпись над тремя равными кнопками в одну строку.
+   Плашка первого экрана не уже 570 px, иначе на ноутбуках 1280 px категории и кнопки не помещались в строку */
+@media screen and (min-width:768px){
+  .hero-plq{--plq-w:clamp(570px,calc(42*var(--vwu,1vw)),700px)}
+  .hero-cats{flex-wrap:nowrap;gap:8px}
+  .hero-cats li{flex:0 0 auto;white-space:nowrap;font-size:14px;padding:7px 13px 7px 10px}
+  .hero-soc{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:14px}
+  .soc-cap{grid-column:1/-1;margin:0 0 -2px}
+  .soc{justify-content:center;padding:4px 14px 4px 4px;min-width:0}
+  .soc .soc-n{white-space:nowrap}
+}
+
+/* картинка-карта на телефоне (Сергей 13.11): своя картинка из OpenStreetMap с метками, по нажатию — Яндекс Карты; живая карта — только на компьютере */
+.map-static{display:none}
+@media (max-width:767px){
+  #contacts .mapbox .map-static{display:block;position:relative;margin:0 0 8px;border-radius:12px;overflow:hidden;line-height:0;border:1px solid var(--line2,rgba(22,60,110,.16))}
+  #contacts .mapbox .map-static img{display:block;width:100%;height:auto;aspect-ratio:12/5;object-fit:cover}
+  #contacts .mapbox .map-static .map-osm{position:absolute;right:4px;bottom:3px;padding:1px 4px;border-radius:4px;font-size:9px;line-height:1.3;color:#333;background:rgba(255,255,255,.85)}
+  html[data-theme="dark"] #contacts .mapbox .map-static img{filter:brightness(.88)}
+}
+@media (max-width:767px) and (max-height:760px){#contacts .mapbox .map-static{width:fit-content;max-width:100%;margin-left:auto;margin-right:auto}#contacts .mapbox .map-static img{width:auto;max-width:100%;height:110px}}
+@media (max-width:767px) and (max-height:680px){#contacts .mapbox .map-static img{height:84px}}

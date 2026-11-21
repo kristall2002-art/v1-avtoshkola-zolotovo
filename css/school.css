@@ -1,0 +1,269 @@
+/* Автошкола «Золотово»: фирменные цвета цвет старого сайта #1f5bff (vosdrive.ru), яркая версия по образцу «Волны» и «Авто Клуба» */
+:root{--spot:0,49,184}
+html[data-theme="light"]{--accent:#00258a;--accent-d:#00258a;--accent-l:#0031b8;--accent-soft:rgba(0,37,138,.12);--on-accent:#fff}
+.btn-glass.btn-book,.btn-glass.btn-book:hover,.hdr .btn-primary,.mmenu .btn-primary,.sec:not(.sec-hero) .btn-primary,.btn-primary,
+html[data-theme="light"]:not([data-hc="1"]) .hdr .btn-primary,html[data-theme="light"]:not([data-hc="1"]) .sec:not(.sec-hero) .btn-primary{background:#0031b8;border-color:#0031b8;color:#fff}
+.btn-glass.btn-book{box-shadow:0 8px 26px rgba(0,49,184,.35)}
+.nk-sec .sec-bg{background:linear-gradient(160deg,#f0f4fe 0%,#c6d4fa 100%)}
+html[data-theme="dark"] .nk-sec .sec-bg{background:linear-gradient(160deg,#17202c 0%,#222c3a 100%)}
+html[data-theme="light"]:not([data-hc="1"]) .sec:not(.sec-hero) .kicker,html[data-theme="light"]:not([data-hc="1"]) .hero-plq .kicker{color:#00258a}
+html[data-theme="light"]:not([data-hc="1"]) .sec:not(.sec-hero) .kicker::before,html[data-theme="light"]:not([data-hc="1"]) .hero-plq .kicker::before{background:#00258a}
+.hero-cats .ico{color:#0031b8}
+.hero-cats li{color:#0d1426;border-color:rgba(0,37,138,.3)}
+html[data-theme="light"]:not([data-hc="1"]) .hdr-a11y #themeBtn{border-color:rgba(0,37,138,.6);background:rgba(0,37,138,.1);color:#00258a}
+.soc-max .soc-i{background:linear-gradient(135deg,#2f80ff,#7b3dff)}
+.soc-max .soc-i svg{width:26px;height:26px}
+@media screen and (min-width:768px){.a4-soc2.hero-soc{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.hw{white-space:nowrap}
+
+/* третий экран: группы и цены */
+.a4-groups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:4px}
+.a4-g{padding:16px 18px}
+.a4-gh b{display:block;font-size:19px}
+.a4-gh small{display:block;color:var(--muted);font-size:13.5px;margin-top:2px}
+.a4-price{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;margin:10px 0 8px}
+.a4-price b{font-size:26px;color:#00258a;white-space:nowrap}
+html[data-theme="dark"] .a4-price b{color:#5682fb}
+.a4-price span{font-size:13.5px;color:var(--muted)}
+.a4-gl{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.a4-gl li{display:flex;justify-content:space-between;gap:10px;padding:7px 10px;border-radius:10px;background:rgba(0,37,138,.07);font-weight:600;font-size:15px}
+.a4-gl li small{font-weight:500;color:var(--muted);white-space:nowrap}
+.a4-gt{margin:8px 0 0;font-size:13.5px;color:var(--muted)}
+.a4-notes{list-style:none;margin:12px 0 0;padding:12px 16px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 18px;border-radius:14px;background:rgba(255,255,255,.72);font-size:14.5px}
+html[data-theme="dark"] .a4-notes{background:rgba(20,28,40,.72)}
+.a4-notes li{display:flex;gap:8px;align-items:flex-start}
+.a4-notes .ico{width:18px;height:18px;flex:none;color:#0031b8;margin-top:1px}
+.a4-cta{margin-top:12px;display:flex;justify-content:center}
+/* «Как нас найти»: два филиала */
+.a4-contacts{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:14px;align-items:stretch}
+.a4-br2{display:grid;gap:12px}
+.a4-b{padding:14px 16px}
+.a4-bh{display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px;margin-bottom:8px}
+.a4-bh .ico{width:20px;height:20px;color:#0031b8}
+.a4-bh b{font-size:18px}
+.a4-bh small{color:var(--muted);font-size:13.5px}
+.a4-bl{list-style:none;margin:0;padding:0;display:grid;gap:7px}
+.a4-bl li{display:grid;gap:1px;font-size:15px}
+.a4-bl small{font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.a4-bl .addr-note{font-size:13.5px;color:var(--muted)}
+.a4-contacts .mapbox{display:flex;flex-direction:column}
+.a4-contacts .map{flex:1 1 auto;min-height:220px}
+.a4-mail{display:flex;align-items:center;gap:8px;margin:10px 0 0;font-size:15px}
+.a4-mail .ico{width:18px;height:18px;color:#0031b8}
+@media (max-width:767px){
+  .a4-groups,.a4-contacts,.a4-notes{grid-template-columns:1fr}
+  .a4-groups{gap:10px}
+  .a4-g{padding:12px 14px}
+  .a4-price{margin:6px 0}
+  .a4-price b{font-size:22px}
+  .a4-notes{padding:10px 12px;font-size:13.5px;margin-top:10px}
+  .a4-gt{display:none}
+  .a4-contacts .map{min-height:150px}
+  .a4-b{padding:12px 14px}
+}
+
+/* телефон: экраны без ужатия шрифта — лишнее прячем (запись есть в нижней панели, карта — кнопкой «На Яндекс.Картах») */
+@media (max-width:767px){
+  .a4-cta{display:none}
+  .a4-notes li:nth-child(1),.a4-notes li:nth-child(3){display:none}
+  .a4-contacts .map{display:none}
+  .a4-mail{margin-top:0}
+  .a4-gh small{font-size:12.5px}
+  .a4-gl li{padding:6px 9px;font-size:14px}
+}
+/* правки после проверки */
+.hw .ch{white-space:pre}
+html .sec-hero .hero-cta .btn-glass.btn-book,html .sec-hero .hero-cta .btn-glass.btn-book:hover{background:rgba(0,49,184,.95)!important;color:#fff!important;border-color:transparent!important}
+.a4-bl .addr-link{justify-self:start}
+.a4-g,.a4-b,.a4-contacts .mapbox{background:rgba(255,255,255,.92)!important}
+html[data-theme="dark"] .a4-g,html[data-theme="dark"] .a4-b,html[data-theme="dark"] .a4-contacts .mapbox{background:rgba(23,32,44,.92)!important}
+.a4-notes{background:rgba(255,255,255,.9)}
+.a4-bl .addr-link{display:inline;border-bottom:0;padding:0;margin:0;text-decoration:underline;text-decoration-color:rgba(0,37,138,.45);text-underline-offset:3px}
+@media (max-width:767px){.a4-contacts .mapbox{padding:12px 14px}}
+
+/* «Мы на связи»: три равные кнопки */
+@media screen and (min-width:768px){.vl-soc3.hero-soc{grid-template-columns:repeat(3,minmax(0,1fr))}}
+/* третий экран: программы и цены */
+.vl-progs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.vl-pg{padding:14px 16px}
+.vl-pg h3{margin:0 0 2px;font-size:18px}
+.vl-pg>small{display:block;color:var(--muted);font-size:13px;margin-bottom:8px}
+.vl-pl{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.vl-pl li{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:10px;padding:8px 10px;border-radius:10px;background:rgba(0,37,138,.07)}
+.vl-cat{min-width:46px;text-align:center;font-weight:800;font-size:15px;color:#fff;background:#0031b8;border-radius:8px;padding:3px 6px;white-space:nowrap}
+.vl-pl li span{font-size:15px;font-weight:600}
+.vl-pl li b{font-size:19px;color:#00258a;white-space:nowrap}
+html[data-theme="dark"] .vl-pl li b{color:#5682fb}
+html[data-theme="dark"] .vl-pl li{background:rgba(86,130,251,.08)}
+/* «Как нас найти»: офисы по городам, раскрываются */
+.vl-contacts{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:14px;align-items:stretch}
+.vl-offs{padding:6px 14px;display:flex;flex-direction:column}
+.vl-grp{border-bottom:1px solid rgba(0,37,138,.15)}
+.vl-grp:last-of-type{border-bottom:0}
+.vl-grp summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:8px;padding:10px 0;font-weight:700;font-size:17px}
+.vl-grp summary::-webkit-details-marker{display:none}
+.vl-grp summary .ico{width:20px;height:20px;color:#0031b8;flex:none}
+.vl-grp summary small{font-weight:500;color:var(--muted);font-size:13px}
+.vl-grp summary::after{content:"";margin-left:auto;width:9px;height:9px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);transition:transform .2s;opacity:.6}
+.vl-grp[open] summary::after{transform:rotate(-135deg)}
+.vl-ol{list-style:none;margin:0 0 10px;padding:0;display:grid;gap:6px}
+.vl-ol li{display:grid;gap:1px;font-size:15px;padding-left:28px}
+.vl-ol .addr-note{font-size:13px;color:var(--muted)}
+.vl-ol .addr-link{justify-self:start;display:inline;border-bottom:0;padding:0;margin:0;text-decoration:underline;text-decoration-color:rgba(0,37,138,.45);text-underline-offset:3px}
+.vl-more{margin:6px 0 4px;font-size:13px;color:var(--muted)}
+.vl-contacts .mapbox{display:flex;flex-direction:column}
+.vl-contacts .map{flex:1 1 auto;min-height:220px}
+.vl-tel{display:flex;flex-wrap:wrap;align-items:center;gap:4px 12px;margin:10px 0 0;font-size:15px}
+.vl-tel .ico{width:18px;height:18px;color:#0031b8}
+.vl-offs,.vl-pg,.vl-contacts .mapbox{background:rgba(255,255,255,.92)!important}
+html[data-theme="dark"] .vl-offs,html[data-theme="dark"] .vl-pg,html[data-theme="dark"] .vl-contacts .mapbox{background:rgba(15,29,43,.92)!important}
+@media (max-width:767px){
+  .vl-progs,.vl-contacts{grid-template-columns:1fr}
+  .vl-progs{gap:10px}
+  .vl-pg{padding:10px 12px}
+  .vl-pg>small{display:none}
+  .vl-pl li{padding:6px 9px;gap:8px}
+  .vl-pl li span{font-size:14px}
+  .vl-pl li b{font-size:16px}
+  .vl-contacts .map{display:none}
+  .vl-grp summary{padding:8px 0;font-size:16px}
+  .vl-ol li{font-size:14px;padding-left:0}
+  .vl-contacts .mapbox{padding:12px 14px}
+  .vl-tel{margin-top:0}
+}
+/* живые фоны: дорога с машинами всех категорий и схема офисов с волнами и огоньками */
+.a4bg{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.a4bg svg{width:100%;height:100%;display:block}
+.vl-road{opacity:.55}
+.vlr-band{fill:rgba(40,56,72,.14)}
+.vlr-edge{stroke:rgba(255,255,255,.85);stroke-width:5;fill:none}
+.vlr-dash{stroke:rgba(255,255,255,.85);stroke-width:5;stroke-dasharray:46 34;fill:none;animation:vlrdash 1.6s linear infinite}
+@keyframes vlrdash{to{stroke-dashoffset:-80}}
+.vlr-v{animation:vlrgo var(--t,14s) linear infinite;animation-delay:var(--d,0s)}
+@keyframes vlrgo{from{transform:translateX(-420px)}to{transform:translateX(2020px)}}
+.vlr-body{fill:#0031b8}.vlr-body2{fill:#eeba2b}.vlr-body3{fill:#475569}
+.vlr-glass{fill:#dbeaf5}.vlr-wheel{fill:#1e293b}.vlr-lamp{fill:#fff3c4}
+.vlr-plate{fill:#fff;stroke:#1e293b;stroke-width:1.5}
+.vlr-plt{font:800 20px Arial,Helvetica,sans-serif;fill:#0d1426;text-anchor:middle}
+html[data-theme="dark"] .vlr-band{fill:rgba(255,255,255,.05)}
+html[data-theme="dark"] .vlr-edge,html[data-theme="dark"] .vlr-dash{stroke:rgba(255,255,255,.3)}
+.vl-scheme{opacity:.7}
+.vls-sea{fill:rgba(16,123,177,.13)}
+.vls-river{fill:none;stroke:rgba(16,123,177,.3);stroke-width:14;stroke-linecap:round}
+.vls-wave{fill:none;stroke:rgba(255,255,255,.7);stroke-width:3;stroke-dasharray:40 30;animation:vlrdash 3s linear infinite}
+.vls-route{fill:none;stroke:rgba(0,49,184,.35);stroke-width:3;stroke-dasharray:3 9;stroke-linecap:round}
+.vls-dot{fill:#eeba2b}
+.vls-pt{fill:#0031b8;stroke:#fff;stroke-width:3}
+.vls-hub{fill:#00258a;stroke:#fff;stroke-width:4}
+.vls-ring{fill:none;stroke:#0031b8;stroke-width:3;transform-box:fill-box;transform-origin:center;animation:vlring 3.6s ease-out infinite;opacity:0}
+@keyframes vlring{0%{transform:scale(.4);opacity:.8}100%{transform:scale(2.6);opacity:0}}
+.vls-lbl{font:600 22px Inter,Arial,sans-serif;fill:rgba(11,42,61,.55)}
+html[data-theme="dark"] .vls-sea{fill:rgba(16,123,177,.22)}
+html[data-theme="dark"] .vls-route{stroke:rgba(86,130,251,.35)}
+html[data-theme="dark"] .vls-pt{stroke:#0f1d2b}
+html[data-theme="dark"] .vls-ring{stroke:#5682fb}
+html[data-theme="dark"] .vls-lbl{fill:rgba(220,236,246,.5)}
+html[data-theme="dark"] .vls-wave{stroke:rgba(255,255,255,.2)}
+.sec:not(.active) .a4bg *{animation-play-state:paused!important}
+@media (prefers-reduced-motion:reduce){.a4bg *{animation:none!important}}
+html .sec-hero .hero-cta .btn-glass.btn-book,html .sec-hero .hero-cta .btn-glass.btn-book:hover{background:rgba(0,49,184,.95)!important;color:#fff!important;border-color:transparent!important}
+@media (max-width:767px){
+  .vl-contacts .a4-mail{display:none}
+  .vl-contacts .map-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+  .vl-contacts .map-actions .btn{padding:10px 8px;font-size:14px;min-height:0}
+  .vl-more{font-size:12.5px}
+}
+/* яркий фон: фирменные зелёный и коралловый насыщеннее и контрастнее (Сергей 12.11) */
+.nk-sec .sec-bg{background:radial-gradient(circle at 88% 10%,rgba(245,199,71,.8),rgba(245,199,71,0) 36%),radial-gradient(circle at 6% 94%,rgba(213,182,251,.6),rgba(213,182,251,0) 42%),linear-gradient(150deg,#3467f4 0%,#1145d4 46%,#0c3197 100%)}
+html[data-theme="dark"] .nk-sec .sec-bg{background:radial-gradient(circle at 88% 10%,rgba(245,199,71,.4),rgba(245,199,71,0) 38%),linear-gradient(150deg,#142552 0%,#0e1a39 55%,#080f21 100%)}
+.vl-road,.vl-scheme{opacity:.95}
+.vlr-band{fill:rgba(6,40,72,.3)}
+.vlr-edge,.vlr-dash{stroke:rgba(255,255,255,.92)}
+.vlr-body{fill:#eeba2b}.vlr-body2{fill:#fff}.vlr-body3{fill:#0b3a5e}
+.vls-sea{fill:rgba(255,255,255,.18)}
+.vls-river{stroke:rgba(255,255,255,.4)}
+.vls-wave{stroke:rgba(255,255,255,.85)}
+.vls-route{stroke:rgba(255,255,255,.8)}
+.vls-pt{fill:#eeba2b;stroke:#0c3197}
+.vls-hub{fill:#fff;stroke:#0c3197}
+.vls-ring{stroke:#fff}
+.vls-dot{fill:#fff3a0}
+.vls-lbl{fill:rgba(255,255,255,.95);font-weight:700}
+html[data-theme="dark"] .vls-lbl{fill:rgba(255,255,255,.8)}
+/* версия для слабовидящих: без живых фонов и анимаций */
+html[data-hc="1"] .a4bg{display:none!important}
+html[data-hc="1"] *{animation:none!important;transition:none!important}
+
+/* «Мы на связи»: четыре кнопки */
+@media screen and (min-width:768px){.ac-soc4.hero-soc{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.soc-max .soc-i{background:linear-gradient(135deg,#2f80ff,#7b3dff)}
+.soc-max .soc-i svg{width:26px;height:26px}
+/* третий экран: таблица цен */
+.ac-tbl{padding:8px 14px}
+.ac-tr{display:grid;grid-template-columns:minmax(0,1.35fr) repeat(3,minmax(0,1fr));gap:8px;align-items:center;padding:9px 0;border-bottom:1px solid rgba(0,37,138,.12)}
+.ac-tr:last-child{border-bottom:0}
+.ac-th{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);padding:4px 0}
+.ac-th span:not(:first-child),.ac-tr>b{text-align:right}
+.ac-c{display:flex;flex-wrap:wrap;align-items:center;gap:2px 8px;font-weight:600;font-size:15px}
+.ac-c i{font-style:normal;min-width:38px;text-align:center;font-weight:800;color:#fff;background:#0031b8;border-radius:8px;padding:3px 6px}
+.ac-c small{flex-basis:100%;font-weight:500;color:var(--muted);font-size:12.5px}
+.ac-tr>b{font-size:17px;color:#00258a;white-space:nowrap}
+html[data-theme="dark"] .ac-tr>b{color:#5682fb}
+.ac-extra{margin-top:10px;padding:10px 14px;font-size:14.5px}
+.ac-extra b{white-space:nowrap}
+.ac-tbl,.ac-extra{background:rgba(255,255,255,.94)!important}
+html[data-theme="dark"] .ac-tbl,html[data-theme="dark"] .ac-extra{background:rgba(8,15,33,.93)!important}
+.ac-ln{width:14px;height:14px;border-radius:50%;background:var(--lc);flex:none;box-shadow:0 0 0 3px rgba(255,255,255,.9)}
+@media (max-width:767px){
+  .ac-tbl{padding:4px 10px}
+  .ac-tr{grid-template-columns:minmax(0,1.15fr) repeat(3,minmax(0,1fr));gap:4px;padding:6px 0}
+  .ac-th{font-size:10px;letter-spacing:.02em}
+  .ac-c{font-size:13px}.ac-c small{display:none}
+  .ac-tr>b{font-size:13px}
+  .ac-extra{font-size:12.5px;padding:8px 10px;margin-top:8px}
+}
+/* живые фоны: приборная панель и схема метро с огоньками к филиалам */
+.ac-dash,.ac-metro{opacity:.95}
+.acd-face{fill:rgba(5,40,20,.35);stroke:rgba(255,255,255,.55);stroke-width:4}
+.acd-arc{fill:none;stroke:rgba(255,255,255,.85);stroke-width:14;stroke-linecap:round}
+.acd-red{fill:none;stroke:#eeba2b;stroke-width:14}
+.acd-tick{stroke:rgba(255,255,255,.9);stroke-width:5;stroke-linecap:round}
+.acd-num{font:700 26px Inter,Arial,sans-serif;fill:rgba(255,255,255,.9);text-anchor:middle}
+.acd-needle path{fill:#eeba2b}
+.acd-n1{animation:acdspd 8s ease-in-out infinite}
+.acd-n2{animation:acdrpm 8s ease-in-out infinite}
+@keyframes acdspd{0%,8%{transform:rotate(-120deg)}40%{transform:rotate(45deg)}55%{transform:rotate(25deg)}75%{transform:rotate(60deg)}100%{transform:rotate(-120deg)}}
+@keyframes acdrpm{0%,8%{transform:rotate(-110deg)}20%{transform:rotate(40deg)}30%{transform:rotate(-30deg)}45%{transform:rotate(55deg)}58%{transform:rotate(-10deg)}75%{transform:rotate(30deg)}100%{transform:rotate(-110deg)}}
+.acd-hub{fill:#fff}
+.acd-lamp{fill:#fff3a0;opacity:.25;animation:acdlamp 2.4s steps(1) infinite}
+.acd-lamp:nth-of-type(2){animation-delay:.8s}.acd-lamp:nth-of-type(3){animation-delay:1.6s}
+@keyframes acdlamp{0%{opacity:1}50%{opacity:.25}}
+.acm-line{fill:none;stroke-width:14;stroke-linecap:round;stroke-linejoin:round;opacity:.9}
+.acm-st{fill:#fff;stroke-width:6}
+.acm-ring{fill:none;stroke:#fff;stroke-width:3;transform-box:fill-box;transform-origin:center;animation:vlring 3.6s ease-out infinite;opacity:0}
+.acm-dot{fill:#fff3a0}
+.acm-lbl{font:700 21px Inter,Arial,sans-serif;fill:rgba(255,255,255,.95)}
+html[data-theme="dark"] .acm-lbl{fill:rgba(255,255,255,.8)}
+@media (max-width:767px){
+  #contacts .vl-more,#contacts .vl-tel .addr-note:last-child{display:none}
+  #contacts .vl-grp summary{padding:6px 0;font-size:14.5px;gap:7px}
+  #contacts .vl-grp summary small{font-size:12px}
+  #contacts .vl-ol{gap:2px;margin-bottom:6px}
+  #contacts .vl-ol li{display:block;font-size:13.5px;line-height:1.35}
+  #contacts .vl-ol li>span:first-child::after{content:" · "}
+  #contacts .vl-offs{padding:4px 12px}
+}
+
+/* текст не выходит за плашки (Сергей 13.11): на телефоне у таблицы с тремя ценами категория — строкой над ценами, «от» — над суммой */
+@media (max-width:767px){
+  .ac-tbl:not(.ac-c1,.ac-c2) .ac-tr{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:4px}
+  .ac-tbl:not(.ac-c1,.ac-c2) .ac-tr .ac-c{grid-column:1/-1}
+  .ac-tbl:not(.ac-c1,.ac-c2) .ac-th span:first-child{display:none}
+  .ac-th span{overflow-wrap:anywhere}
+  .ac-tbl:not(.ac-c1,.ac-c2) .ac-tr>b{white-space:normal;font-size:14px}
+  .ac-tr>b .ot{display:block;font-size:11px;font-weight:600;color:var(--muted)}
+}
+
+.vl-flat{margin:8px 0}.vl-flat li{padding-left:0}
+.ac-c1 .ac-tr{grid-template-columns:minmax(0,2fr) minmax(0,1fr)}.ac-c2 .ac-tr{grid-template-columns:minmax(0,1.6fr) repeat(2,minmax(0,1fr))}
+@media screen and (min-width:768px){.ac-soc3.hero-soc{grid-template-columns:repeat(3,minmax(0,1fr))}.ac-soc2.hero-soc{grid-template-columns:repeat(2,minmax(0,1fr))}}
